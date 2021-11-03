@@ -1,0 +1,6 @@
+{
+  "appId": "com.lanquetinvanessa.pokemon",
+  "appName": "pokemon",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

@@ -1,0 +1,112 @@
+header {
+  background-color: #027ffdc9;
+}
+header img {
+  height: 100px;
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+.accordion {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.container {
+  border: 1px solid #cbcbcb;
+}
+.accordion__label {
+  padding: 10px;
+  display: flex;
+}
+.accordion__content p {
+  margin: 0;
+}
+.accordion__content img {
+  max-height: 501px;
+  width: 60%;
+}
+.accordion__label {
+  display: block;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.2em;
+  background-color: #f6f6f6;
+  color: black;
+}
+.accordion__label i{
+  margin-right: 5px;
+}
+.accordion__label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 12px;
+  height: 6px;
+  transform: translateY(-50%) rotate(270deg);
+  /* background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" /></svg>'); */
+  background-size: contain;
+  transition: transform 0.4s;
+}
+
+.accordion__content {
+  background: #ffffff;
+  line-height: 1.6;
+  font-size: 1.2em;
+  text-align: center;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: 300ms;
+}
+
+.accordion__input {
+  display: none;
+}
+.accordion__input:checked {
+  border-radius: 10px;
+}
+.accordion__input:checked ~ .accordion__content {
+  display: flex;
+  max-height: 800px;
+  padding: 20px;
+}
+.accordion__input:checked ~ .accordion__label {
+  background: #027ffd;
+  color: #ffffff;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+
+}
+.accordion__input:checked ~ .accordion__label i {
+  transform:rotate(0.25turn);
+}
+
+@media (orientation: landscape) {
+  .accordion {
+    width: 80%;
+  }
+  .accordion__content{
+    flex-direction: row;
+    align-items: center;
+  }
+  .accordion__content p{
+    margin-left: 20px;
+  }
+}
+
+@media (orientation: portrait) {
+  .accordion__content{
+    flex-direction: column;
+    align-items: center;
+  }
+  .accordion__content p{
+    margin-left: 20px;
+  }
+}
